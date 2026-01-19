@@ -7,9 +7,12 @@ error_log("SESSION_ID=" . session_id());
 function start_session(): void {
     // Start session early and safely (Render is behind a HTTPS proxy)
     if (session_status() === PHP_SESSION_NONE) {
-        $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-            || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+        $isHttps = (
+            (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
+            (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+        );
 
+        // IMPORTANT: Don't set domain here; let browser use current host.
         session_set_cookie_params([
             'lifetime' => 0,
             'path' => '/',
@@ -24,7 +27,7 @@ function start_session(): void {
 
         session_start();
     }
-
+    
 }
 
 function e(string $str): string {
