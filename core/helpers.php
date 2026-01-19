@@ -5,30 +5,25 @@ require_once __DIR__ . '/../config/config.php';
 function start_session(): void {
     // Start session safely (must happen before any output)
     if (session_status() === PHP_SESSION_NONE) {
-        // If headers are already sent, we cannot change session ini settings or start session
-        if (!headers_sent($file, $line)) {
-            // Only set these before session_start()
-            ini_set('session.use_only_cookies', '1');
-            ini_set('session.cookie_httponly', '1');
+        $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+            || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
 
-            // If you're on HTTPS (Render), make cookies secure + SameSite
-            $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
-                || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
+        // Must be before session_start()
+        session_set_cookie_params([
+            'lifetime' => 0,
+            'path' => '/',
+            'secure' => $isHttps,
+            'httponly' => true,
+            'samesite' => 'Lax',
+        ]);
 
-            ini_set('session.cookie_secure', $isHttps ? '1' : '0');
-            ini_set('session.cookie_samesite', 'Lax');
-
-            // Set your session name BEFORE starting session (if defined)
-            if (defined('SESSION_NAME') && SESSION_NAME) {
-                session_name(SESSION_NAME);
-            }
-
-            session_start();
-        } else {
-            // Optional: comment this out in production
-            // error_log("Session headers already sent in $file:$line");
+        if (defined('SESSION_NAME') && SESSION_NAME) {
+            session_name(SESSION_NAME);
         }
+
+        session_start();
     }
+
 }
 
 function e(string $str): string {
