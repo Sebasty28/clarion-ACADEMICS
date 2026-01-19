@@ -1,6 +1,7 @@
 <?php
-require_once __DIR__ . '/../core/auth.php';
-require_once __DIR__ . '/../core/security.php';
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../core/helpers.php';
+require_once __DIR__ . '/../core/csrf.php';
 
 $error = null;
 $success = null;
@@ -149,7 +150,7 @@ if (is_post()) {
       </div>
     </div>
 
-    <form method="post" autocomplete="off" class="needs-validation" novalidate>
+    <form method="post" autocomplete="off" class="needs-validation" novalidate enctype="multipart/form-data">
       <?= csrf_field() ?>
       <input type="hidden" name="role" id="roleInput" value="STUDENT">
 

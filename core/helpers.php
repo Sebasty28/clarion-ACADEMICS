@@ -3,12 +3,11 @@
 require_once __DIR__ . '/../config/config.php';
 
 function start_session(): void {
-    // Start session safely (must happen before any output)
+    // Start session early and safely (Render is behind a HTTPS proxy)
     if (session_status() === PHP_SESSION_NONE) {
         $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
             || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
 
-        // Must be before session_start()
         session_set_cookie_params([
             'lifetime' => 0,
             'path' => '/',
