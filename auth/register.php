@@ -154,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     </div>
 
-    <form method="post" autocomplete="off" class="needs-validation" novalidate enctype="multipart/form-data">
+    <form method="post" action="" autocomplete="off" class="needs-validation" novalidate enctype="multipart/form-data">
       <?= csrf_field() ?>
       <input type="hidden" name="role" id="roleInput" value="STUDENT">
 
