@@ -1,0 +1,76 @@
+.clarion-footer{
+  background:#0b2d5b;
+  color:#e6eef8;
+  margin-top:80px;
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+  padding:48px 24px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:40px;
+}
+
+.footer-brand .brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+  font-size:20px;
+}
+
+.footer-brand .logo{
+  width:50px;
+  height:50px;
+  object-fit:contain;
+}
+
+.footer-brand .tagline{
+  margin-top:14px;
+  font-size:14px;
+  line-height:1.6;
+  color:#cddbf0;
+  max-width:320px;
+}
+
+.footer-links h4{
+  margin-bottom:14px;
+  font-size:15px;
+  color:#ffffff;
+}
+
+.footer-links a{
+  display:block;
+  color:#cddbf0;
+  font-size:14px;
+  text-decoration:none;
+  margin-bottom:8px;
+}
+
+.footer-links a:hover{
+  color:#ffffff;
+  text-decoration:underline;
+}
+
+.footer-bottom{
+  text-align:center;
+  padding:14px;
+  font-size:13px;
+  background:#082348;
+  color:#b9cce6;
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .footer-container{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media (max-width:500px){
+  .footer-container{
+    grid-template-columns:1fr;
+  }
+}

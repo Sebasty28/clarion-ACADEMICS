@@ -1,0 +1,219 @@
+/* ===== BASE ===== */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #f6f7f9;
+    color: #0f172a;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.profile-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+    background: white;
+}
+
+/* ===== PAGE ===== */
+.page {
+    display: flex;
+    justify-content: center;
+    padding: 48px 16px;
+}
+
+.card {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    background: transparent;
+    border: none;
+}
+
+.card h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+/* ===== TEXT ===== */
+.subtitle {
+    font-size: 15px;
+    color: #475569;
+    margin-bottom: 26px;
+}
+
+/* ===== SOCIAL BUTTONS ===== */
+.social-btn {
+    width: 100%;
+    height: 48px;
+    border-radius: 999px;
+    border: 1.5px solid #c7d2fe;
+    background: #f8fafc;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1e3a8a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.social-btn:hover {
+    background: #e5e7eb;
+}
+
+.social-btn.google i {
+    font-size: 18px;
+    color: #4285F4;
+}
+
+.social-btn.classlink i {
+    color: #2563eb;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+    margin: 26px 0 30px;
+    font-size: 14px;
+    color: #94a3b8;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 32%;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+/* ===== ROLES ===== */
+.roles {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.role {
+    flex: 1;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    background: #fff;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.role:hover {
+    border-color: #3b82f6;
+}
+
+.role.active {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59,130,246,.15);
+}
+
+.role-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.student { background: #2563eb; }
+.educator { background: #a16207; }
+
+/* ===== FORM ===== */
+form { text-align: left; }
+
+.row.g-3 {
+    margin-bottom: 14px;
+}
+
+.form-control {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.form-floating > .form-control {
+    height: 58px;
+    padding: 1rem 0.75rem;
+}
+
+.form-floating > label {
+    font-size: 14px;
+    padding: 1rem 0.75rem;
+}
+
+.form-control:hover {
+    background-color: #f3f4f6 !important;
+}
+
+.form-control:focus {
+    background-color: #ffffff !important;
+    border-color: #3b82f6;
+    box-shadow: none;
+}
+
+.form-check-input {
+    background-color: #ffffff;
+    border: 2px solid #e5e7eb;
+}
+
+.form-check-input:checked {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* ===== BUTTON ===== */
+.primary-btn {
+    width: 100%;
+    height: 50px;
+    background: #0b63ce;
+    border-radius: 999px;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.primary-btn:hover {
+    background: #094a9a;
+}
+
+/* ===== FOOTER ===== */
+.footer-text {
+    margin-top: 22px;
+    font-size: 14px;
+}

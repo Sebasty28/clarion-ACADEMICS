@@ -1,0 +1,200 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #f6f7f9;
+    color: #0f172a;
+}
+
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.profile-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2563eb;
+    background: white;
+}
+
+/* MAIN */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 44px;
+}
+
+.login-box {
+    width: 420px;
+    text-align: center;
+}
+
+/* TEXT */
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #475569;
+    margin-bottom: 26px;
+}
+
+/* SOCIAL BUTTONS */
+.social-btn {
+    width: 100%;
+    height: 48px;
+    border-radius: 999px;
+    border: 1.5px solid #c7d2fe;
+    background: #f8fafc;
+    font-size: 15px;
+    font-weight: 500;
+    color: #1e3a8a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.social-btn:hover {
+    background: #e5e7eb;
+}
+
+.social-btn.google i {
+    font-size: 18px;
+    color: #4285F4;
+}
+
+.social-btn.classlink i {
+    color: #2563eb;
+}
+
+/* DIVIDER */
+.divider {
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    color: #94a3b8;
+    margin: 26px 0 30px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 28%;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+.divider::before { left: 0; }
+.divider::after { right: 0; }
+
+/* FORM */
+.form-control {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.form-floating > .form-control {
+    height: 58px;
+    padding: 1rem 0.75rem;
+}
+
+.form-floating > label {
+    font-size: 14px;
+    padding: 1rem 0.75rem;
+}
+
+.form-control:hover {
+    background-color: #f3f4f6 !important;
+}
+
+.form-control:focus {
+    background-color: #ffffff !important;
+    border-color: #3b82f6;
+    box-shadow: none;
+}
+
+/* PASSWORD */
+.password-wrapper {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.password-wrapper .form-floating {
+    margin-bottom: 0;
+}
+
+.password-wrapper .toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 18px;
+    color: #64748b;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+}
+
+.password-wrapper .toggle-password.show {
+    display: block;
+}
+
+/* FORGOT */
+.forgot {
+    text-align: right;
+    margin-bottom: 24px;
+}
+
+.forgot a {
+    font-size: 14px;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+/* BUTTON */
+.primary-btn {
+    width: 100%;
+    height: 50px;
+    border-radius: 999px;
+    background: #0b63ce;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.primary-btn:hover {
+    background: #094a9a;
+}
+
+/* FOOTER */
+.footer-text {
+    font-size: 14px;
+    margin-top: 22px;
+}
+
+.footer-text a {
+    color: #2563eb;
+    text-decoration: none;
+}

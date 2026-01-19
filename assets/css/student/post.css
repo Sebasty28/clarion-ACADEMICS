@@ -1,0 +1,191 @@
+/* Clarion Color Palette */
+:root {
+    --clarion-light-gray-1: #E8EBF0;
+    --clarion-light-gray-2: #D4DAE3;
+    --clarion-dark-1: #2C3742;
+    --clarion-dark-2: #697483;
+    --clarion-blue-primary: #2E5FA8;
+    --clarion-blue-secondary: #5580BC;
+    --clarion-blue-light: #D4E3F7;
+    --clarion-yellow: #E8C547;
+    --clarion-beige: #C4BAA5;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F9FA;
+    color: #0f172a;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+    background-color: white;
+    min-height: calc(100vh - 60px);
+    box-shadow: 2px 0 4px rgba(0,0,0,0.05);
+    padding: 0;
+}
+
+.sidebar-heading {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar .nav-link {
+    color: #697483;
+    padding: 12px 20px;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #D4E3F7;
+    color: #2E5FA8;
+    border-left-color: #2E5FA8;
+}
+
+.sidebar .nav-link.active {
+    background-color: #D4E3F7;
+    color: #2E5FA8;
+    border-left-color: #2E5FA8;
+    font-weight: 600;
+}
+
+.sidebar .nav-link i {
+    font-size: 18px;
+}
+
+.dropdown-menu {
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: 'Inter', sans-serif;
+}
+
+.dropdown-item {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f5f9;
+    color: #0b63ce;
+}
+
+.subject-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+    background-color: #D4E3F7;
+    color: #2E5FA8;
+}
+
+.btn-icon {
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #697483;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font: 600 14px/1.2 'Inter', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-icon:hover:not(.liked):not(.bookmarked) {
+    background: #f8f9fa;
+    border-color: #d1d5db;
+}
+
+.btn-icon.liked {
+    color: #2E5FA8 !important;
+    background: rgba(46, 95, 168, 0.08) !important;
+    border-color: rgba(46, 95, 168, 0.35) !important;
+}
+
+.btn-icon.liked i {
+    color: #2E5FA8 !important;
+}
+
+.btn-icon.bookmarked {
+    color: #2E5FA8 !important;
+    background: rgba(46, 95, 168, 0.08) !important;
+    border-color: rgba(46, 95, 168, 0.35) !important;
+}
+
+.btn-icon.bookmarked i {
+    color: #2E5FA8 !important;
+}
+
+.badge {
+    background-color: #2E5FA8;
+}
+
+.bookmark-toast {
+    background: #2E5FA8;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+}
+
+.bookmark-toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.bookmark-toast i {
+    font-size: 18px;
+}
+
+.bookmark-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.bookmark-modal.show {
+    opacity: 1;
+}
+
+.bookmark-modal-content {
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.bookmark-modal.show .bookmark-modal-content {
+    transform: scale(1);
+}

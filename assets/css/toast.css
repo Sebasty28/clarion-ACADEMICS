@@ -1,0 +1,29 @@
+.auth-toast {
+    background: #2E5FA8;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+    min-width: 250px;
+}
+
+.auth-toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.auth-toast.error {
+    background: #dc3545;
+}
+
+.auth-toast i {
+    font-size: 18px;
+}

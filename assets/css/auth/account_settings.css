@@ -1,0 +1,145 @@
+/* Account Settings - Clarion Uniform Styling */
+:root {
+    --clarion-blue-primary: #2E5FA8;
+    --clarion-dark-1: #0f172a;
+    --clarion-dark-2: #697483;
+    --clarion-light-gray-2: #D4DAE3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+    background: #F8F9FA;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+    background-color: white;
+    min-height: calc(100vh - 60px);
+    box-shadow: 2px 0 4px rgba(0,0,0,0.05);
+    padding: 0;
+}
+
+.sidebar-heading {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar .nav-link {
+    color: #697483;
+    padding: 12px 20px;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #D4E3F7;
+    color: #2E5FA8;
+    border-left-color: #2E5FA8;
+}
+
+.sidebar .nav-link.active {
+    background-color: #D4E3F7;
+    color: #2E5FA8;
+    border-left-color: #2E5FA8;
+    font-weight: 600;
+}
+
+.sidebar .nav-link i {
+    font-size: 18px;
+}
+
+.settings-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.settings-card h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 24px 0;
+}
+
+.form-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-control {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    border-color: #2E5FA8;
+    box-shadow: 0 0 0 0.2rem rgba(46, 95, 168, 0.25);
+}
+
+.btn-primary {
+    background-color: #2E5FA8;
+    border-color: #2E5FA8;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #5580BC;
+    border-color: #5580BC;
+}
+
+.dropdown-menu {
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: 'Inter', sans-serif;
+}
+
+.dropdown-item {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f5f9;
+    color: #0b63ce;
+}
+
+.badge {
+    background-color: #2E5FA8;
+}
+
+.form-control:read-only {
+    background-color: #f8f9fa;
+    color: #94a3b8;
+    border-color: #e5e7eb;
+}
+
+.form-label.text-muted {
+    color: #94a3b8 !important;
+}

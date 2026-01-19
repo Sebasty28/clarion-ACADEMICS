@@ -1,0 +1,16 @@
+php_value upload_max_filesize 25M
+php_value post_max_size 30M
+php_value max_execution_time 300
+php_value max_input_time 300
+
+# --- Supabase (server-side env vars) ---
+SetEnv SUPABASE_URL "https://vnfybjefldsjmwugvvgh.supabase.co"
+SetEnv SUPABASE_SERVICE_ROLE_KEY "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZuZnliamVmbGRzam13dWd2dmdoIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2ODc1MDkzNiwiZXhwIjoyMDg0MzI2OTM2fQ.wb7-uIdDwmjdLOHHnRZTy3t2anXl88cIT-0wBuHu9yQ"
+SetEnv SUPABASE_PDF_BUCKET "pdf"
+SetEnv SUPABASE_THUMB_BUCKET "thumbs"
+# --- end Supabase ---
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]

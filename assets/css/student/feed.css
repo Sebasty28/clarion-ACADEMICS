@@ -1,0 +1,396 @@
+/* Clarion Color Palette */
+:root {
+    --clarion-light-gray-1: #E8EBF0;
+    --clarion-light-gray-2: #D4DAE3;
+    --clarion-dark-1: #2C3742;
+    --clarion-dark-2: #697483;
+    --clarion-blue-primary: #2E5FA8;
+    --clarion-blue-secondary: #5580BC;
+    --clarion-blue-light: #D4E3F7;
+    --clarion-yellow: #E8C547;
+    --clarion-beige: #C4BAA5;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F9FA;
+    color: #0f172a;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+    background-color: white;
+    min-height: calc(100vh - 60px);
+    box-shadow: 2px 0 4px rgba(0,0,0,0.05);
+    padding: 0;
+}
+
+.sidebar-heading {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.sidebar .nav-link {
+    color: #697483;
+    padding: 12px 20px;
+    border-left: 3px solid transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #D4E3F7;
+    color: #2E5FA8;
+    border-left-color: #2E5FA8;
+}
+
+.sidebar .nav-link.active {
+    background-color: #D4E3F7;
+    color: #2E5FA8;
+    border-left-color: #2E5FA8;
+    font-weight: 600;
+}
+
+.sidebar .nav-link i {
+    font-size: 18px;
+}
+
+.material-card-thumbnail {
+    position: relative;
+    height: 180px;
+    background: #f1f5f9;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.material-card-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dropdown-menu {
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: 'Inter', sans-serif;
+}
+
+.dropdown-item {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f5f9;
+    color: #0b63ce;
+}
+
+.material-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.material-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.pdf-card-thumbnail {
+    position: relative;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #FFE8E8 0%, #FFD4D4 100%);
+    text-align: center;
+    cursor: pointer;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pdf-card-thumbnail i.bi-file-pdf {
+    font-size: 64px;
+    color: #DC3545;
+}
+
+.pdf-card-thumbnail:hover {
+    background: linear-gradient(135deg, #FFD4D4 0%, #FFBABA 100%);
+}
+
+.pdf-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #DC3545;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.material-card-body {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.material-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--clarion-dark-1);
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+.material-description {
+    font-size: 14px;
+    color: var(--clarion-dark-2);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 12px;
+    flex: 1;
+}
+
+.material-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid var(--clarion-light-gray-2);
+}
+
+.subject-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+    background-color: #D4E3F7;
+    color: #2E5FA8;
+}
+
+.material-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.material-actions .btn-icon {
+    appearance: none;
+    border: 1px solid rgba(0,0,0,.08);
+    background: #fff;
+    color: #65676B;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font: 600 13px/1.1 'Inter', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    position: relative;
+    transition: transform .08s ease, background .15s ease, border-color .15s ease, color .15s ease;
+    width: auto;
+    height: auto;
+    z-index: 1;
+}
+
+.material-actions .btn-icon:hover:not(.liked):not(.bookmarked) {
+    background: #f0f2f5;
+    transform: scale(1);
+    border-color: rgba(0,0,0,.08);
+    color: #65676B;
+}
+
+.material-actions .btn-icon:active {
+    transform: scale(.98);
+}
+
+.material-actions .btn-icon i {
+    font-size: 16px;
+    transform-origin: 50% 80%;
+    transition: transform .18s ease;
+}
+
+.material-actions .btn-icon.liked {
+    color: #2E5FA8 !important;
+    border-color: rgba(46,95,168,.35) !important;
+    background: rgba(46,95,168,.08) !important;
+    animation: none;
+}
+
+.material-actions .btn-icon.liked i {
+    color: #2E5FA8 !important;
+    transform: scale(1.12);
+}
+
+.material-actions .btn-icon.bookmarked {
+    color: #2E5FA8 !important;
+    border-color: rgba(46,95,168,.35) !important;
+    background: rgba(46,95,168,.08) !important;
+}
+
+.material-actions .btn-icon.bookmarked i {
+    color: #2E5FA8 !important;
+}
+
+.material-actions .btn-icon.pop i {
+    animation: fbPop .35s ease;
+}
+
+@keyframes fbPop {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.35) rotate(-6deg); }
+    75% { transform: scale(1.05) rotate(2deg); }
+    100% { transform: scale(1.12) rotate(0); }
+}
+
+.fb-burst {
+    position: absolute;
+    inset: auto auto 50% 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.material-actions .btn-icon.bursting .fb-burst {
+    animation: fbBurst .55s ease forwards;
+}
+
+@keyframes fbBurst {
+    0% { opacity: 0; transform: translate(-50%,-50%) scale(.3); }
+    15% { opacity: 1; }
+    100% { opacity: 0; transform: translate(calc(-50% + var(--x)), calc(-50% + var(--y))) scale(1); }
+}
+
+.modal-header {
+    background-color: #2E5FA8;
+    color: white;
+}
+
+.modal-header .btn-close {
+    filter: invert(1);
+}
+
+.modal-body {
+    padding: 24px;
+}
+
+.badge {
+    background-color: #2E5FA8;
+}
+
+.bookmark-toast {
+    background: #2E5FA8;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+}
+
+.bookmark-toast.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.bookmark-toast i {
+    font-size: 18px;
+}
+
+.bookmark-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.bookmark-modal.show {
+    opacity: 1;
+}
+
+.bookmark-modal-content {
+    background: white;
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.bookmark-modal.show .bookmark-modal-content {
+    transform: scale(1);
+}
+
+.material-card.deleted-post {
+    position: relative;
+    opacity: 0.7;
+}
+
+.deleted-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.95);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    border-radius: 12px;
+}
+
+.dropdown-menu {
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    font-family: 'Inter', sans-serif;
+}
+
+.dropdown-item {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f5f9;
+    color: #0b63ce;
+}
+
+
