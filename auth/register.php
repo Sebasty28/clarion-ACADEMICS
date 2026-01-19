@@ -7,8 +7,11 @@ require_once __DIR__ . '/../core/db.php';
 $error = null;
 $success = null;
 
-if (is_post()) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   csrf_verify();
+  $username = trim($_POST['username'] ?? '');
+  $email    = trim($_POST['email'] ?? '');
+  $password = $_POST['password'] ?? '';
   $first = trim($_POST['first_name'] ?? '');
   $last  = trim($_POST['last_name'] ?? '');
   $email = trim($_POST['email'] ?? '');
