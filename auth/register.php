@@ -2,12 +2,13 @@
 require_once __DIR__ . '/../config/config.php';
 require_once __DIR__ . '/../core/helpers.php';
 require_once __DIR__ . '/../core/csrf.php';
+require_once __DIR__ . '/../core/db.php';
 
 $error = null;
 $success = null;
 
 if (is_post()) {
-  require_csrf();
+  csrf_verify();
   $first = trim($_POST['first_name'] ?? '');
   $last  = trim($_POST['last_name'] ?? '');
   $email = trim($_POST['email'] ?? '');
