@@ -2,9 +2,6 @@
 // core/helpers.php
 require_once __DIR__ . '/../config/config.php';
 
-// TEMP DEBUG (remove later)
-error_log("SESSION_ID=" . session_id());
-
 // Force HTTPS on Render (proxy sets X-Forwarded-Proto)
 if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] !== 'https') {
     $host = $_SERVER['HTTP_HOST'] ?? '';
@@ -14,14 +11,12 @@ if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PRO
 }
 
 function start_session(): void {
-    // Start session early and safely (Render is behind a HTTPS proxy)
     if (session_status() === PHP_SESSION_NONE) {
         $isHttps = (
             (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ||
             (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
         );
 
-        // IMPORTANT: Don't set domain here; let browser use current host.
         session_set_cookie_params([
             'lifetime' => 0,
             'path' => '/',
@@ -36,8 +31,13 @@ function start_session(): void {
 
         session_start();
     }
-    
 }
+
+// ✅ Start session immediately so CSRF always has a session
+start_session();
+
+// TEMP DEBUG (remove later)
+error_log("SESSION_ID=" . session_id());
 
 function e(string $str): string {
     return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
@@ -59,12 +59,10 @@ function is_post(): bool {
 }
 
 function set_flash(string $key, string $value): void {
-    start_session();
     $_SESSION['flash'][$key] = $value;
 }
 
 function get_flash(string $key): ?string {
-    start_session();
     if (!empty($_SESSION['flash'][$key])) {
         $val = $_SESSION['flash'][$key];
         unset($_SESSION['flash'][$key]);

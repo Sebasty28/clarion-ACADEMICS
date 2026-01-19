@@ -2,6 +2,7 @@
 // core/csrf.php
 
 function csrf_token(): string {
+    start_session();
     if (empty($_SESSION['csrf_token'])) {
         $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
     }
@@ -14,6 +15,7 @@ function csrf_field(): string {
 }
 
 function csrf_verify(): void {
+    start_session();
     $posted  = $_POST['csrf_token'] ?? '';
     $session = $_SESSION['csrf_token'] ?? '';
 
