@@ -36,7 +36,8 @@ define('SUPABASE_THUMB_BUCKET', getenv('SUPABASE_THUMB_BUCKET') ?: 'thumbs');
 // 2. Add authorized redirect URI: http://localhost/clarion/auth/google_callback.php
 define('GOOGLE_CLIENT_ID', '388224077371-g9fqu0tl31f0qqcoua40obu0h58rvpi0.apps.googleusercontent.com');
 define('GOOGLE_CLIENT_SECRET', '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');
-define('GOOGLE_REDIRECT_URI', 'https://clarion-academics.onrender.com/auth/google_callback.php');// change on production
+//define('GOOGLE_REDIRECT_URI', 'https://clarion-academics.onrender.com/auth/google_callback.php');// change on production
+define('GOOGLE_REDIRECT_URI', getenv('GOOGLE_REDIRECT_URI') ?: 'https://clarion-academics.onrender.com/auth/google_callback.php');
 
 define('APP_NAME', 'Clarion');
 define('BASE_URL', ''); // if project folder is /htdocs/clarion
