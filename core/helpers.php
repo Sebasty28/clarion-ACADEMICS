@@ -4,6 +4,15 @@ require_once __DIR__ . '/../config/config.php';
 
 // TEMP DEBUG (remove later)
 error_log("SESSION_ID=" . session_id());
+
+// Force HTTPS on Render (proxy sets X-Forwarded-Proto)
+if (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] !== 'https') {
+    $host = $_SERVER['HTTP_HOST'] ?? '';
+    $uri  = $_SERVER['REQUEST_URI'] ?? '/';
+    header("Location: https://{$host}{$uri}", true, 301);
+    exit;
+}
+
 function start_session(): void {
     // Start session early and safely (Render is behind a HTTPS proxy)
     if (session_status() === PHP_SESSION_NONE) {
