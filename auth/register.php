@@ -154,6 +154,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </div>
     </div>
 
+    <?php
+      // TEMP DEBUG (remove later)
+      echo "<!-- SID=" . htmlspecialchars(session_id()) . " -->";
+      echo "<!-- CSRF=" . htmlspecialchars($_SESSION['csrf_token'] ?? 'none') . " -->";
+    ?>
+
     <form method="post" action="" autocomplete="off" class="needs-validation" novalidate enctype="multipart/form-data">
       <?= csrf_field() ?>
       <input type="hidden" name="role" id="roleInput" value="STUDENT">
