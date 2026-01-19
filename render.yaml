@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: clarion
+    env: docker
+    plan: free
+    autoDeploy: true
